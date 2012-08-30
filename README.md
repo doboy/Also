@@ -1,25 +1,38 @@
 Also
 ====
 
-Ever had a lot methods do the same thing? Guess not.. but for those rare occasions..
+Ever had lots of methods that do the same thing?!
+You want to set them to the same thing but dont want to do something lame like
+```python
+   def method(self):
+       pass
 
-###### Trivial Example
+   othermethod = method
+```
+
+Rather you want to do it with style like
+
+```python
+   @also('othermethod')
+   def method(self):
+       pass
+```
+
+Then do I have a solution for you!
+
+###### Basic Usage
 ```python
 from also import also, AlsoMetaClass
 
 class Foo:
     __metaclass__ = AlsoMetaClass
 
-    @also('createFoo')
-    def __init__(self, thing):
-        self._thing = thing
-
     @also('getThing')
     @also('get_thing')
     def getthing(self):
-        return self._thing
+        return 'go bears'
 
-foo = Foo.createFoo('go bear')
+foo = Foo()
 assert (foo.getthing() == foo.get_thing() == 
         foo.getThing() == 'go bears')
 ```
