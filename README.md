@@ -1,7 +1,4 @@
-Also
-====
-
-###### Information
+## Also
 Ever had lots of methods that do the same thing?!
 You want to set them to the same thing but dont want to do something lame like
 ```python
@@ -21,10 +18,12 @@ Rather you want to do it with style like
 
 Then do I have a solution for you!
 
-###### Installation
-`pip install also`
+## Installation
+```
+pip install also
+```
 
-###### Basic Usage
+## Usage
 ```python
 from also import also, AlsoMetaClass
 

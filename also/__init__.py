@@ -1,13 +1,11 @@
 """Get ready for some VooDoo Magic."""
 
-from types import MethodType
-
-def isAlias(method):
+def _isAlias(method):
     return isinstance(method, also)
 
 class AlsoMetaClass(type):
     def __new__(meta, classname, bases, classDict):
-        for method in filter(isAlias, classDict.values()):
+        for method in filter(_isAlias, classDict.values()):
             aliases = set()
             while isinstance(method, also):
                 aliases.add(method)

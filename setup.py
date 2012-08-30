@@ -6,7 +6,7 @@ def read(fname):
 
 setup(
     name="also",
-    version="0.0.1",
+    version="0.0.2",
     packages=["also"],
     author="Huan Do",
     author_email="doboy0@gmail.com",
