@@ -1,4 +1,8 @@
-## Also
+Also
+====
+Python utility module offering syntax sugar.
+
+## Background
 Ever had lots of methods that do the same thing?!
 You want to set them to the same thing but dont want to do something lame like
 ```python
