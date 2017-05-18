@@ -1,6 +1,8 @@
 from also import also, AlsoMetaClass
 
-class Foo(metaclass=AlsoMetaClass):
+class Foo:
+    __metaclass__ = AlsoMetaClass
+
     @also('getThing')
     @also('get_thing')
     def getthing(self):
