@@ -5,7 +5,7 @@ def _isAlias(method):
 
 class AlsoMetaClass(type):
     def __new__(meta, classname, bases, classDict):
-        for method in filter(_isAlias, list(classDict.values())):
+        for method in filter(_isAlias, classDict.values()):
             aliases = set()
             while isinstance(method, also):
                 aliases.add(method)
@@ -13,7 +13,7 @@ class AlsoMetaClass(type):
             else:
                 original_method = method
 
-            classDict[original_method.__name__] = original_method
+            classDict[original_method.func_name] = original_method
             for alias in aliases:
                 classDict[alias.name] = original_method
 
